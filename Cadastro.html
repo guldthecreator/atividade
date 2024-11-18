@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <!-- Register Page -->
+    <div class="container" id="registerPage" style="display: block;">
+        <h1>Cadastre-se</h1>
+        <p class="subtitle">Preencha os dados para criar sua conta</p>
+        
+        <form id="registerForm">
+            <div class="form-group">
+                <input type="text" id="fullName" placeholder="Nome completo" required>
+                <div class="error-message" id="nameError" style="display: none;">Nome deve ter ao menos 3 caracteres</div>
+            </div>
+            
+            <div class="form-group">
+                <input type="email" id="email" placeholder="Email" required>
+                <div class="error-message" id="emailError" style="display: none;">Email inválido</div>
+            </div>
+            
+            <div class="form-group">
+                <input type="password" id="password" placeholder="Senha" required>
+                <div class="password-requirements">
+                    <ul>
+                        <li id="lengthCheck">Mínimo de 8 caracteres</li>
+                        <li id="upperCheck">Uma letra maiúscula</li>
+                        <li id="numberCheck">Um número</li>
+                        <li id="specialCheck">Um caractere especial</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <input type="password" id="confirmPassword" placeholder="Confirme a senha" required>
+                <div class="error-message" id="passwordError" style="display: none;">As senhas não coincidem</div>
+            </div>
+            
+            <button onclick="window.location.href= 'home.html'">Criar conta</button>
+            <div class="success-message" id="registerSuccess" style="display: none;">
+                Conta criada com sucesso!
+            </div>
+        </form>
+        
+        <div class="links">
+            <a href="javascript:void(0)" onclick="window.location.href='Login.html'">Já tem uma conta? Faça login</a>
+        </div>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.container');
+            pages.forEach(page => {
+                page.style.display = 'none';
+            });
+            document.getElementById(pageId).style.display = 'block';
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showPage('registerPage'); // Mudar para 'loginPage' se necessário
+        });
+
+        // Adicione a lógica de validação aqui, se necessário
+    </script>
+</body>
+</html>

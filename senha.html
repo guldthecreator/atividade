@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste</title>
+    <link rel="stylesheet" href="estilos.css"> <!-- Corrigido para um arquivo CSS -->
+</head>
+<body>
+    <!-- Forgot Password Page -->
+    <div class="container" id="forgotPasswordPage" style="display: block;">
+        <h1>Recuperar Senha</h1>
+        <p class="subtitle">Informe seu email para receber as instruções de recuperação</p>
+        
+        <form id="forgotPasswordForm" onsubmit="handleForgotPassword(event)">
+            <div class="form-group">
+                <input type="email" id="recoveryEmail" placeholder="Digite seu email" required>
+                <div class="error-message" id="recoveryEmailError" style="display: none;">Email inválido</div>
+            </div>
+            
+            <button type="submit">Enviar instruções</button>
+            <div class="success-message" id="recoverySuccess" style="display: none;">
+                Email de recuperação enviado com sucesso!
+            </div>
+        </form>
+        
+        <div class="links">
+            <a href="javascript:void(0)" onclick="window.location.href='Login.html'">Voltar ao login</a>
+        </div>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.container');
+            pages.forEach(page => {
+                page.style.display = 'none';
+            });
+            document.getElementById(pageId).style.display = 'block';
+        }
+
+        function handleForgotPassword(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+
+            const email = document.getElementById('recoveryEmail').value;
+            const successMessage = document.getElementById('recoverySuccess');
+            const errorMessage = document.getElementById('recoveryEmailError');
+
+            // Simulação de validação do email
+            if (validateEmail(email)) {
+                successMessage.style.display = 'block';
+                errorMessage.style.display = 'none';
+                // Aqui você poderia enviar a solicitação de recuperação
+            } else {
+                errorMessage.style.display = 'block';
+                successMessage.style.display = 'none';
+            }
+        }
+
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        // Adiciona a lógica para iniciar no login ou em outra página se necessário
+        document.addEventListener('DOMContentLoaded', () => {
+            showPage('forgotPasswordPage'); // Mudar para a página inicial desejada
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5dc; /* Cor de fundo */
+}
+
+/* Estilo para o header contendo a logo */
+.header {
+    width: 100%;
+    background-color: #f5f5dc;
+    padding: 20px 0; /* Espaçamento vertical no cabeçalho */
+    display: flex;
+    justify-content: center; /* Centraliza a logo */
+}
+
+.logo img {
+    max-width: 200px; /* Tamanho da logo */
+}
+
+/* Estilo para o menu e submenu */
+.menu {
+    cursor: pointer;
+    font-size: 20px; /* Tamanho do menu */
+    margin: 20px 0; /* Espaço acima e abaixo do menu */
+    padding: 5px; /* Espaçamento ao redor */
+    border: 1px solid #ccc; /* Borda para o menu */
+    border-radius: 5px; /* Cantos arredondados */
+    display: inline-block; /* Para ajustar o tamanho */
+    background-color: #289255; /* Fundo leve */
+    color: white;
+}
+
+.submenu {
+    display: none;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.submenu a {
+    text-decoration: none;
+    padding: 5px 10px; /* Espaçamento para os links */
+    background-color: #289255; /* Fundo leve para os links */
+    border-radius: 5px; /* Cantos arredondados */
+    margin: 2px 0; /* Margem entre os links */
+    color: white;
+}
+
+/* Estilo do container de notícias */
+.home-container {
+    width: 80%; /* Largura do container */
+    max-width: 600px; /* Largura máxima */
+    padding: 20px;
+    background-color: #289255; /* Fundo do container */
+    border-radius: 10px; /* Cantos arredondados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    color: white;
+    margin-bottom: 20px; /* Espaço abaixo do container */
+}
+
+.news-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px; /* Espaço entre as notícias */
+    padding: 15px;
+    background-color: #289255; /* Fundo do container de notícias */
+    border-radius: 10px; /* Cantos arredondados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+.news-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px; /* Cantos arredondados para a imagem */
+    margin-bottom: 10px; /* Espaço abaixo da imagem */
+}
+
+.news-item h3 {
+    margin: 10px 0 5px 0; /* Espaçamento para o título */
+    color: white;
+}
+
+.news-item p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+    color: white;
+}
+
+.news-item a {
+    text-decoration: none;
+    color: #f5f5dc; /* Cor do link */
+    background-color: #333; /* Fundo do botão de "Leia mais..." */
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.news-item a:hover {
+    background-color: #555;
+}

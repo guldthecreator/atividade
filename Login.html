@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <!-- Login Page -->
+    <div class="container" id="loginPage" style="display: block;">
+        <h1>Bem-vindo</h1>
+        <p class="subtitle">Faça login para continuar</p>
+        
+        <form id="loginForm" onsubmit="handleLogin(event)">
+          <div class="form-group">
+            <input type="email" placeholder="Email" required>
+          </div>
+          <div class="form-group">
+            <input type="password" placeholder="Senha" required>
+          </div>
+          <button onclick="window.location.href='home.html'">Entrar</button>
+        </form>
+        
+        <div class="links">
+          <a href="javascript:void(0)" onclick="window.location.href='senha.html'">Esqueceu sua senha?</a>
+          <a href="javascript:void(0)" onclick="window.location.href='Cadastro.html'">Cadastre-se</a>
+        </div>
+    </div>
+</body>
+</html>
